@@ -45,7 +45,23 @@ If conjecture~\eqref{conjecture:row_sums} is true, then it is also true that
 because $2^{4i+3} - 2^{4i+2} = 2^{4i+2}$.
 Expanding both sums we get
 \begin{align*}
-    2^{4i+3} &= \sum_{k=0}^{4i+3} \sum_{m=0}^{k} \binom{4i+3-k}{m} \binom{k}{k-m} - \sum_{k=0}^{4i+3} \sum_{m=0}^{i} \binom{4i+3-k}{m} \binom{k}{k-m}\\
-    2^{4i+3} &= \sum_{k=0}^{4i+3} \sum_{m=0}^{k} \binom{4i+3-k}{m} \binom{k}{k-m} - \sum_{m=0}^{i} \binom{4i+3-k}{m} \binom{k}{k-m}
+    2^{4i+2} &= \sum_{k=0}^{4i+3} \sum_{m=0}^{k} \binom{4i+3-k}{m} \binom{k}{k-m} - \sum_{k=0}^{4i+3} \sum_{m=0}^{i} \binom{4i+3-k}{m} \binom{k}{k-m}\\
+    2^{4i+2} &= \sum_{k=0}^{4i+3} \sum_{m=0}^{k} \binom{4i+3-k}{m} \binom{k}{k-m} - \sum_{m=0}^{i} \binom{4i+3-k}{m} \binom{k}{k-m}
 \end{align*}
 Note that $\binom{n}{k} \geq \binom{n}{k}_i$ for each $n,k,i$.
+Now we have three possible relation between $i,k$: $k < i$, $k = i$, $k > i$.
+
+If $k < i$ then inner sums turn into
+\begin{equation*}
+    \sum_{m=0}^{k} \binom{4i+3-k}{m} \binom{k}{k-m} - \sum_{m=0}^{i} \binom{4i+3-k}{m} \binom{k}{k-m}
+    = - \sum_{m=k}^{i} \binom{4i+3-k}{m} \binom{k}{k-m}
+\end{equation*}
+If $k = i$ obviously
+\begin{equation*}
+    \sum_{m=0}^{k} \binom{4i+3-k}{m} \binom{k}{k-m} - \sum_{m=0}^{i} \binom{4i+3-k}{m} \binom{k}{k-m} = 0
+\end{equation*}
+If $k > i$ then
+\begin{equation*}
+    \sum_{m=0}^{k} \binom{4i+3-k}{m} \binom{k}{k-m} - \sum_{m=0}^{i} \binom{4i+3-k}{m} \binom{k}{k-m}
+    = \sum_{m=i}^{k} \binom{4i+3-k}{m} \binom{k}{k-m}
+\end{equation*}
