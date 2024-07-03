@@ -1,0 +1,51 @@
+In~\cite{gregory2023iterated}, Gregory et al.
+provide the following conjecture for row sums of iterated rascal triangles.
+\begin{conjecture}
+    \label{conjecture:row_sums}
+    For every $i$
+    \begin{align*}
+        \sum_{k=0}^{4i+3} \rascalNumber{4i+3}{k}{i} = 2^{4i+2}
+    \end{align*}
+\end{conjecture}
+where $\rascalNumber{n}{k}{i}$ is an iterated rascal number.
+Define the iterated rascal number
+\begin{definition}
+    Iterated rascal number
+    \begin{align*}
+        \rascalNumber{n}{k}{i} &= \sum_{m=0}^{i} \binom{n-k}{m} \binom{k}{m}
+    \end{align*}
+\end{definition}
+Note that iterated rascal numbers are closely related to Vandermonde convolution
+$\binom{a+b}{r} = \sum_{m=0}^{r} \binom{a}{m} \binom{b}{r-m}$
+\begin{equation*}
+    \rascalNumber{n}{k}{i} = \sum_{m=0}^{i} \binom{n-k}{m} \binom{k}{k-m}
+\end{equation*}
+While
+\begin{equation*}
+    \binom{n}{k}= \sum_{m=0}^{k} \binom{n-k}{m} \binom{k}{k-m}
+\end{equation*}
+It is straightforward to see that
+\begin{equation*}
+    \binom{n}{k} - \rascalNumber{n}{k}{i} = \sum_{m=i+1}^{k} \binom{n-k}{m} \binom{k}{k-m}
+\end{equation*}
+In particular, above sum is zero for $k \leq i$, that means
+\begin{equation*}
+    \binom{n}{k} = \rascalNumber{n}{k}{i}, \quad  0 \leq k \leq i
+\end{equation*}
+To prove the conjecture~\eqref{conjecture:row_sums}
+we utilize above relations in terms of binomial coefficients and iterated rascal numbers.
+Recall the row sums property of binomial coefficients
+\begin{equation*}
+    \sum_{k=0}^{4i+3} \binom{4i+3}{k} = 2^{4i+3}
+\end{equation*}
+If conjecture~\eqref{conjecture:row_sums} is true, then it is also true that
+\begin{equation*}
+     \sum_{k=0}^{4i+3} \binom{4i+3}{k} -  \sum_{k=0}^{4i+3} \binom{4i+3}{k}_i = 2^{4i+2}
+\end{equation*}
+because $2^{4i+3} - 2^{4i+2} = 2^{4i+2}$.
+Expanding both sums we get
+\begin{align*}
+    2^{4i+3} &= \sum_{k=0}^{4i+3} \sum_{m=0}^{k} \binom{4i+3-k}{m} \binom{k}{k-m} - \sum_{k=0}^{4i+3} \sum_{m=0}^{i} \binom{4i+3-k}{m} \binom{k}{k-m}\\
+    2^{4i+3} &= \sum_{k=0}^{4i+3} \sum_{m=0}^{k} \binom{4i+3-k}{m} \binom{k}{k-m} - \sum_{m=0}^{i} \binom{4i+3-k}{m} \binom{k}{k-m}
+\end{align*}
+Note that $\binom{n}{k} \geq \binom{n}{k}_i$ for each $n,k,i$.
