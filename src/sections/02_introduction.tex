@@ -54,14 +54,35 @@ Now we have three possible relation between $i,k$: $k < i$, $k = i$, $k > i$.
 If $k < i$ then inner sums turn into
 \begin{equation*}
     \sum_{m=0}^{k} \binom{4i+3-k}{m} \binom{k}{k-m} - \sum_{m=0}^{i} \binom{4i+3-k}{m} \binom{k}{k-m}
-    = - \sum_{m=k}^{i} \binom{4i+3-k}{m} \binom{k}{k-m}
+    = 0
 \end{equation*}
+Because $\binom{k}{k-m}$ in the sum over $i$ is zero for all $m > k$.
+
 If $k = i$ obviously
 \begin{equation*}
     \sum_{m=0}^{k} \binom{4i+3-k}{m} \binom{k}{k-m} - \sum_{m=0}^{i} \binom{4i+3-k}{m} \binom{k}{k-m} = 0
 \end{equation*}
+
 If $k > i$ then
 \begin{equation*}
     \sum_{m=0}^{k} \binom{4i+3-k}{m} \binom{k}{k-m} - \sum_{m=0}^{i} \binom{4i+3-k}{m} \binom{k}{k-m}
-    = \sum_{m=i}^{k} \binom{4i+3-k}{m} \binom{k}{k-m}
+    = \sum_{m=i+1}^{k} \binom{4i+3-k}{m} \binom{k}{k-m}
 \end{equation*}
+Thus, we have to prove that
+\begin{equation*}
+    2^{4i+2} = \sum_{k} \sum_{m=i+1}^{k} \binom{4i+3-k}{m} \binom{k}{k-m}
+\end{equation*}
+Let $m$ to iterate from 0
+\begin{equation*}
+    2^{4i+2} = \sum_{k} \sum_{m=0}^{k} \binom{4i+3-k}{i+1+m} \binom{k}{i+1+m}
+\end{equation*}
+Although, above equation almost exactly matches Vandermonde identity, it cannot be applied directly.
+Even it were applied, the result would disprove the main conjecture giving $2^{4i+3}$ as row sums.
+My validations show that indeed conjecture true for $i \leq 100$.
+Therefore, propose the following conjecture
+\begin{conjecture} For every $i$
+    \begin{equation*}
+        2^{4i+2} = \sum_{k} \sum_{m=0}^{k} \binom{4i+3-k}{i+m} \binom{k}{i+m}
+    \end{equation*}
+\end{conjecture}
+Above conjecture validated up to $i=100$.
