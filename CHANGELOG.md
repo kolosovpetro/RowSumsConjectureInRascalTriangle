@@ -6,17 +6,4 @@ and this project adheres to [Semantic Versioning v2.0.0](https://semver.org/spec
 
 ## [1.1.9] - 2024-07-03
 ### Changed
-- Hotfix update GitHub Actions GitVersion
-
-## [1.1.8] - 2024-07-03
-### Changed
-- Changelog added
-- README updated
-- Theorem environments update
-- Footnote added
-- Bump GitHub Actions version
-- Hotfix update GitHub Actions GitVersion
-
-## [1.1.7] - 2024-01-31
-### Changed
-- Initial release before change log introduced.
+- Initial changes in template
