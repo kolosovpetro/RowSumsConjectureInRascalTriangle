@@ -17,14 +17,12 @@
 \apptocmd{\sloppy}{\hbadness 10000\relax}{}{}
 \raggedbottom
 
-\newcommand \anglePower [2]{\langle #1 \rangle \sp{#2}}
-\newcommand \bernoulli [2][B] {{#1}\sb{#2}}
-\newcommand \curvePower [2]{\{#1\}\sp{#2}}
-\newcommand \coeffA [3][A] {{\mathbf{#1}} \sb{#2,#3}}
-\newcommand \polynomialP [4][P]{{\mathbf{#1}}\sp{#2} \sb{#3}(#4)}
-
-% rascal numbers etc
+% rascal numbers
 \newcommand \rascalNumber [3] {\binom{#1}{#2}_{#3}}
+\newcommand \north[0] {\mathbf{North}}
+\newcommand \south[0] {\mathbf{South}}
+\newcommand \west[0] {\mathbf{West}}
+\newcommand \east[0] {\mathbf{East}}
 
 % free foot note
 \let\svthefootnote\thefootnote
@@ -41,6 +39,7 @@
 \newtheorem{example}[theorem]{Example}
 \newtheorem{conjecture}[theorem]{Conjecture}
 \newtheorem{definition}[theorem]{Definition}
+\newtheorem{proposition}[theorem]{Proposition}
 
 \numberwithin{equation}{section}
 
@@ -111,6 +110,12 @@
 
     \section{Introduction} \label{sec:introduction}
     \input{sections/02_introduction}
+
+    \section{Row sums conjecture}\label{sec:row-sums-conjecture}
+    \input{sections/03_proof_of_conjecture}
+
+    \section{Acknowledgements}\label{sec:acknowledgements}
+    \input{sections/acknowledgements}
 
 
 %    \section{Conclusions}\label{sec:conclusions}

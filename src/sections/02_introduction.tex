@@ -1,88 +1,51 @@
-In~\cite{gregory2023iterated}, Gregory et al.
-provide the following conjecture for row sums of iterated rascal triangles.
-\begin{conjecture}
-    \label{conjecture:row_sums}
-    For every $i$
-    \begin{align*}
-        \sum_{k=0}^{4i+3} \rascalNumber{4i+3}{k}{i} = 2^{4i+2}
-    \end{align*}
-\end{conjecture}
-where $\rascalNumber{n}{k}{i}$ is an iterated rascal number.
-Define the iterated rascal number
+Rascal triangle is Pascal-like numeric triangle developed in 2010 by three middle school students,
+Alif Anggoro, Eddy Liu, and Angus Tulloch~\cite{anggoro2010rascal}.
+During math classes they were challenged to provide the next row for the following number triangle
+\[
+    \begin{array}{cccccccc}
+        &   &   &   & 1 &   &   &   \\
+        &   &   & 1 &   & 1 &   &   \\
+        &   & 1 &   & 2 &   & 1 &   \\
+        & 1 &   & 3 &   & 3 &   & 1 \\
+        & & & & \dots & &
+    \end{array}
+\]
+
+Teacher's expected answer was the one that matches Pascal's triangle, e.g ``1 4 6 4 1''.
+However, Anggoro, Liu, and Tulloch suggested ``1 4 5 4 1'' instead.
+They devised this new row via what they called diamond formula
+\begin{align*}
+    \south  = \frac{\east \cdot \west + 1}{\north}
+\end{align*}
+So they obtained the following triangle
+\begin{table}[H]
+    \begin{center}
+        \setlength\extrarowheight{-6pt}
+        \begin{tabular}{c|cccccccc}
+            $n/k$ & 0 & 1 & 2  & 3  & 4  & 5  & 6 & 7 \\
+            \hline
+            0     & 1 &   &    &    &    &    &   &   \\
+            1     & 1 & 1 &    &    &    &    &   &   \\
+            2     & 1 & 2 & 1  &    &    &    &   &   \\
+            3     & 1 & 3 & 3  & 1  &    &    &   &   \\
+            4     & 1 & 4 & 5  & 4  & 1  &    &   &   \\
+            5     & 1 & 5 & 7  & 7  & 5  & 1  &   &   \\
+            6     & 1 & 6 & 9  & 10 & 9  & 6  & 1 &   \\
+            7     & 1 & 7 & 11 & 13 & 13 & 11 & 7 & 1
+        \end{tabular}
+    \end{center}
+    \caption{Rascal triangle.}
+    \label{tab:rascal-triangle-i-1}
+\end{table}
+Indeed, the forth row is ``1 4 5 4 1'' because $4= \frac{1 \cdot 3 + 1}{1}$ and $5 = \frac{3 \cdot 3 + 1}{2}$.
+Since then, a lot of work has been done over the topic of rascal triangles.
+In this article we stick our attention to the one of rascal triangles generalizations,
+namely iterated rascal triangles~\cite{gregory2023iterated}.
+Iterated rascal number is defined via a sum of binomial coefficients multiplication
 \begin{definition}
     Iterated rascal number
-    \begin{align*}
-        \rascalNumber{n}{k}{i} &= \sum_{m=0}^{i} \binom{n-k}{m} \binom{k}{m}
-    \end{align*}
+    \begin{align}
+        \rascalNumber{n}{k}{i} = \sum_{m=0}^{i} \binom{n-k}{m} \binom{k}{m}
+    \end{align}
 \end{definition}
-Note that iterated rascal numbers are closely related to Vandermonde convolution
-$\binom{a+b}{r} = \sum_{m=0}^{r} \binom{a}{m} \binom{b}{r-m}$
-\begin{equation*}
-    \rascalNumber{n}{k}{i} = \sum_{m=0}^{i} \binom{n-k}{m} \binom{k}{k-m}
-\end{equation*}
-While
-\begin{equation*}
-    \binom{n}{k}= \sum_{m=0}^{k} \binom{n-k}{m} \binom{k}{k-m}
-\end{equation*}
-It is straightforward to see that
-\begin{equation*}
-    \binom{n}{k} - \rascalNumber{n}{k}{i} = \sum_{m=i+1}^{k} \binom{n-k}{m} \binom{k}{k-m}
-\end{equation*}
-In particular, above sum is zero for $k \leq i$, that means
-\begin{equation*}
-    \binom{n}{k} = \rascalNumber{n}{k}{i}, \quad  0 \leq k \leq i
-\end{equation*}
-To prove the conjecture~\eqref{conjecture:row_sums}
-we utilize above relations in terms of binomial coefficients and iterated rascal numbers.
-Recall the row sums property of binomial coefficients
-\begin{equation*}
-    \sum_{k=0}^{4i+3} \binom{4i+3}{k} = 2^{4i+3}
-\end{equation*}
-If conjecture~\eqref{conjecture:row_sums} is true, then it is also true that
-\begin{equation*}
-     \sum_{k=0}^{4i+3} \binom{4i+3}{k} -  \sum_{k=0}^{4i+3} \binom{4i+3}{k}_i = 2^{4i+2}
-\end{equation*}
-because $2^{4i+3} - 2^{4i+2} = 2^{4i+2}$.
-Expanding both sums we get
-\begin{align*}
-    2^{4i+2} &= \sum_{k=0}^{4i+3} \sum_{m=0}^{k} \binom{4i+3-k}{m} \binom{k}{k-m} - \sum_{k=0}^{4i+3} \sum_{m=0}^{i} \binom{4i+3-k}{m} \binom{k}{k-m}\\
-    2^{4i+2} &= \sum_{k=0}^{4i+3} \sum_{m=0}^{k} \binom{4i+3-k}{m} \binom{k}{k-m} - \sum_{m=0}^{i} \binom{4i+3-k}{m} \binom{k}{k-m}
-\end{align*}
-Note that $\binom{n}{k} \geq \binom{n}{k}_i$ for each $n,k,i$.
-Now we have three possible relation between $i,k$: $k < i$, $k = i$, $k > i$.
-
-If $k < i$ then inner sums turn into
-\begin{equation*}
-    \sum_{m=0}^{k} \binom{4i+3-k}{m} \binom{k}{k-m} - \sum_{m=0}^{i} \binom{4i+3-k}{m} \binom{k}{k-m}
-    = 0
-\end{equation*}
-Because $\binom{k}{k-m}$ in the sum over $i$ is zero for all $m > k$.
-
-If $k = i$ obviously
-\begin{equation*}
-    \sum_{m=0}^{k} \binom{4i+3-k}{m} \binom{k}{k-m} - \sum_{m=0}^{i} \binom{4i+3-k}{m} \binom{k}{k-m} = 0
-\end{equation*}
-
-If $k > i$ then
-\begin{equation*}
-    \sum_{m=0}^{k} \binom{4i+3-k}{m} \binom{k}{k-m} - \sum_{m=0}^{i} \binom{4i+3-k}{m} \binom{k}{k-m}
-    = \sum_{m=i+1}^{k} \binom{4i+3-k}{m} \binom{k}{k-m}
-\end{equation*}
-Thus, we have to prove that
-\begin{equation*}
-    2^{4i+2} = \sum_{k} \sum_{m=i+1}^{k} \binom{4i+3-k}{m} \binom{k}{k-m}
-\end{equation*}
-Let $m$ to iterate from 0
-\begin{equation*}
-    2^{4i+2} = \sum_{k} \sum_{m=0}^{k} \binom{4i+3-k}{i+1+m} \binom{k}{i+1+m}
-\end{equation*}
-Although, above equation almost exactly matches Vandermonde identity, it cannot be applied directly.
-Even it were applied, the result would disprove the main conjecture giving $2^{4i+3}$ as row sums.
-My validations show that indeed conjecture true for $i \leq 100$.
-Therefore, propose the following conjecture
-\begin{conjecture} For every $i$
-    \begin{equation*}
-        2^{4i+2} = \sum_{k} \sum_{m=0}^{k} \binom{4i+3-k}{i+m} \binom{k}{i+m}
-    \end{equation*}
-\end{conjecture}
-Above conjecture validated up to $i=100$.
+Thus, the rascal triangle~\eqref{tab:rascal-triangle-i-1} is the triangle generated by $\rascalNumber{n}{k}{1}$.
