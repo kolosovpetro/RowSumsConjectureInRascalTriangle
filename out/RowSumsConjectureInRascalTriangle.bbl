@@ -1,9 +1,20 @@
 \begin{thebibliography}{1}
 
+\bibitem{anggoro2010rascal}
+{Anggoro, Alif and Liu, Eddy and Tulloch, Angus}.
+\newblock {The Rascal Triangle}.
+\newblock {\em {The College Mathematics Journal}}, 41(5):393--395, 2010.
+\newblock \url {https://doi.org/10.4169/074683410X521991}.
+
 \bibitem{gregory2023iterated}
 {Gregory, Jena and Kronholm, Brandt and White, Jacob}.
 \newblock Iterated rascal triangles.
 \newblock {\em {Aequationes mathematicae}}, pages 1--18, 2023.
 \newblock \url {https://doi.org/10.1007/s00010-023-00987-6}.
+
+\bibitem{graham1994concrete}
+{Graham, Ronald L. and Knuth, Donald E. and Patashnik, Oren}.
+\newblock {\em {Concrete mathematics: a foundation for computer science}}.
+\newblock {Pearson Education India}, 1994.
 
 \end{thebibliography}

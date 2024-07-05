@@ -5,44 +5,44 @@ Reallocating 'name_of_file' (item size: 1) to 6 items.
 The style file: unsrt.bst
 Reallocating 'name_of_file' (item size: 1) to 34 items.
 Database file #1: RowSumsConjectureInRascalTriangle.bib
-You've used 1 entry,
+You've used 3 entries,
             1791 wiz_defined-function locations,
-            452 strings with 3755 characters,
-and the built_in function-call counts, 275 in all, are:
-= -- 28
-> -- 4
+            467 strings with 4117 characters,
+and the built_in function-call counts, 652 in all, are:
+= -- 65
+> -- 12
 < -- 1
-+ -- 2
-- -- 1
-* -- 13
-:= -- 46
-add.period$ -- 4
-call.type$ -- 1
-change.case$ -- 1
++ -- 6
+- -- 3
+* -- 33
+:= -- 105
+add.period$ -- 11
+call.type$ -- 3
+change.case$ -- 2
 chr.to.int$ -- 0
-cite$ -- 1
-duplicate$ -- 14
-empty$ -- 25
-format.name$ -- 1
-if$ -- 62
+cite$ -- 3
+duplicate$ -- 33
+empty$ -- 68
+format.name$ -- 3
+if$ -- 147
 int.to.chr$ -- 0
-int.to.str$ -- 1
-missing$ -- 1
-newline$ -- 9
-num.names$ -- 1
-pop$ -- 2
+int.to.str$ -- 3
+missing$ -- 4
+newline$ -- 20
+num.names$ -- 3
+pop$ -- 9
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 9
+skip$ -- 14
 stack$ -- 0
-substring$ -- 19
-swap$ -- 6
+substring$ -- 44
+swap$ -- 8
 text.length$ -- 1
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
 warning$ -- 0
-while$ -- 4
-width$ -- 2
-write$ -- 15
+while$ -- 8
+width$ -- 4
+write$ -- 38
